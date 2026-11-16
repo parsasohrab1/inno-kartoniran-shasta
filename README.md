@@ -47,7 +47,7 @@ inno-kartoniran-shasta/
 ├── BRS.docx                        # نیازمندی‌های کسب‌وکار
 ├── ai_dashboard.html               # داشبورد AI خودکفا (HTML inline)
 ├── requirements.txt                # وابستگی‌های پایتون
-├── .github/workflows/ci.yml        # CI/CD (GitHub Actions)
+├── docs/ci.yml                     # کانفیج CI/CD (GitHub Actions) — ببینید docs/CI_SETUP.md
 ├── data/
 │   ├── real/                       # داده واقعی (UCI CCPP + real-derived)
 │   ├── synthetic/                  # داده مصنوعی (boiler + orders)
@@ -120,7 +120,9 @@ python -m pytest tests/ -v
 
 ## CI/CD
 
-`.github/workflows/ci.yml`:
+کانفیج در `docs/ci.yml` قرار دارد (به‌دلیل نبود `workflow` scope در توکن، موقتاً به‌جای `.github/workflows/`).
+برای فعال‌سازی، آن را به `.github/workflows/ci.yml` منتقل کنید — مراحل کامل در `docs/CI_SETUP.md`:
+
 - اجرای خودکار pytest روی push/PR.
 - نصب وابستگی‌ها، اجرای پایپ‌لاین، تولید خروجی‌ها.
 - آپلود artifacts (مدل‌ها، گزارش‌ها).
