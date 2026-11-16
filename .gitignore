@@ -35,5 +35,9 @@ data/real/CCPP/
 data/real/CCPP.zip
 *.ods
 
+# Workflow file — installed via scripts/enable_ci.sh (needs PAT with Workflows permission).
+# Excluded from normal pushes because the deploy token lacks that permission.
+.github/workflows/ci.yml
+
 # OS
 Thumbs.db
