@@ -1,0 +1,77 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Lint (syntax check)
+        run: |
+          python -m py_compile src/utils/__init__.py
+          python -m py_compile src/models/regression.py
+          python -m py_compile src/optimizer/boiler_optimizer.py
+          python -m py_compile src/planner/carbon_aware_planner.py
+          python -m py_compile src/train/run_pipeline.py
+
+      - name: Run unit tests
+        run: |
+          python -m pytest tests/ -v --tb=short --maxfail=5
+
+      - name: Verify data files exist
+        run: |
+          test -f data/real/ccpp_raw.csv
+          test -f data/real/boiler_telemetry_real_derived.csv
+          test -f data/synthetic/boiler_telemetry_synthetic.csv
+          test -f data/synthetic/production_orders_synthetic.csv
+
+      - name: Run full pipeline (train + optimize + plan)
+        run: |
+          python -m src.train.run_pipeline
+
+      - name: Verify outputs
+        run: |
+          test -f models/efficiency_synthetic_best.joblib
+          test -f models/gas_synthetic_best.joblib
+          test -f models/training_report.json
+          test -f data/outputs/optimizer_savings.json
+          test -f data/outputs/planner_report.json
+          test -f ai_dashboard.html
+
+      - name: Upload model artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: models-and-outputs
+          path: |
+            models/
+            data/outputs/
+            ai_dashboard.html
+          retention-days: 14
+
+      - name: Print summary
+        run: |
+          echo "=== Pipeline Summary ==="
+          python -c "import json; r=json.load(open('models/training_report.json')); print('Synthetic eff best:', r['synthetic']['efficiency']['best'], 'R2=', r['synthetic']['efficiency']['metrics'][r['synthetic']['efficiency']['best']]['R2'])"
+          python -c "import json; s=json.load(open('data/outputs/optimizer_savings.json')); print('Gas saved m3/yr:', round(s['annual_gas_saved_m3'])); print('CO2 saved kg/yr:', round(s['annual_co2_saved_kg']))"
+          python -c "import json; p=json.load(open('data/outputs/planner_report.json')); print('Cold starts:', p['baseline_fcfs']['total_cold_starts'], '->', p['carbon_aware']['total_cold_starts'])"

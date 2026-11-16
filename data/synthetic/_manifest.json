@@ -1,0 +1,27 @@
+{
+  "real_derived": {
+    "boiler_telemetry_real_derived.csv": "تبدیل CCPP (UCI، 9568 رکورد) به سناریوی دیگ‌بخار کارتن",
+    "ccpp_raw.csv": "داده خام UCI CCPP (منبع اصلی)",
+    "sources": [
+      "https://archive.ics.uci.edu/ml/datasets/Combined+Cycle+Power+Plant",
+      "https://oxmaint.com/industries/delivery-operations-management/box-plant-energy-efficiency-improvement-guide",
+      "https://epssw.com/blog/effective-steam-consumption-in-corrugated-manufacturing"
+    ]
+  },
+  "synthetic": {
+    "boiler_telemetry_synthetic.csv": "8760 ساعت تله‌متری دیگ (1 سال) با مدل فیزیکی-تجربی",
+    "production_orders_synthetic.csv": "480 سفارش تولید Corrugator با فلوت/لاینر/اولویت/مهلت"
+  },
+  "industry_params": {
+    "energy_pct_of_opex": "12-18٪ (میانه 15٪)",
+    "steam_boiler_pct_of_energy": "35-45٪ (میانه 40٪)",
+    "roll_temp_c": "165-185",
+    "oversized_boiler_load": "40-60٪",
+    "failed_steam_trap_cost_usd_yr": "3500-8000",
+    "uninsulated_condensate_loss_pct": "10-20",
+    "blowdown_no_recovery_threshold_pct": 5,
+    "steam_per_ton_cardboard": 1.8,
+    "co2_kg_per_m3_gas": 1.96,
+    "gas_heating_value_mj_m3": 36.0
+  }
+}

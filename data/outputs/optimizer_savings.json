@@ -1,0 +1,13 @@
+{
+  "efficiency_before_pct": 89.03620833333335,
+  "efficiency_after_pct": 91.46143307280181,
+  "efficiency_gain_pct": 2.4252247394684616,
+  "gas_before_m3_h": 666.41525,
+  "gas_after_m3_h": 648.7443400135734,
+  "gas_saved_m3_h": 17.670909986426636,
+  "gas_saved_pct": 2.651636496377692,
+  "gas_per_ton_before": 118.49041087974538,
+  "gas_per_ton_after": 115.34847590015016,
+  "annual_gas_saved_m3": 154797.17148109732,
+  "annual_co2_saved_kg": 303402.45610295073
+}

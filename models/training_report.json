@@ -1,0 +1,226 @@
+{
+  "synthetic": {
+    "efficiency": {
+      "best": "GradientBoosting",
+      "metrics": {
+        "LinearRegression": {
+          "MAE": 0.3583212861321688,
+          "RMSE": 0.44930721903895166,
+          "R2": 0.9223163245113629,
+          "MAPE_pct": 0.39752979568131325,
+          "CV_R2_mean": 0.8303433368269619,
+          "CV_R2_std": 0.1328634919050694
+        },
+        "Ridge": {
+          "MAE": 0.35819421111977817,
+          "RMSE": 0.4492401111020583,
+          "R2": 0.9223395282421456,
+          "MAPE_pct": 0.3973891605683099,
+          "CV_R2_mean": 0.8300886555872937,
+          "CV_R2_std": 0.13328262797938525
+        },
+        "RandomForest": {
+          "MAE": 0.3320217415622385,
+          "RMSE": 0.4148246185571294,
+          "R2": 0.9337826162969769,
+          "MAPE_pct": 0.3687221467202732,
+          "CV_R2_mean": 0.8750656428399395,
+          "CV_R2_std": 0.08294535109997694
+        },
+        "GradientBoosting": {
+          "MAE": 0.3251241179013268,
+          "RMSE": 0.4064801565246378,
+          "R2": 0.9364198320617898,
+          "MAPE_pct": 0.36101562645654856,
+          "CV_R2_mean": 0.8768906067149281,
+          "CV_R2_std": 0.08184130907956892
+        }
+      },
+      "features": [
+        "ambient_temp_c",
+        "ambient_pressure_mbar",
+        "ambient_humidity_pct",
+        "boiler_load_pct",
+        "steam_flow_kg_h",
+        "flue_gas_temp_c",
+        "excess_air_pct",
+        "feedwater_temp_c",
+        "blowdown_rate_pct",
+        "hour",
+        "day_of_week",
+        "month",
+        "is_daytime",
+        "sin_hour",
+        "cos_hour",
+        "sin_month",
+        "cos_month"
+      ]
+    },
+    "gas": {
+      "best": "Ridge",
+      "metrics": {
+        "LinearRegression": {
+          "MAE": 1.9032566483192044,
+          "RMSE": 2.410983827554662,
+          "R2": 0.4304824529538941,
+          "MAPE_pct": 1.6319407863699065,
+          "CV_R2_mean": 0.3196832388078158,
+          "CV_R2_std": 0.14410355830148003
+        },
+        "Ridge": {
+          "MAE": 1.9028133540532581,
+          "RMSE": 2.41066159525013,
+          "R2": 0.4306346768600643,
+          "MAPE_pct": 1.631574114556223,
+          "CV_R2_mean": 0.31976396788184924,
+          "CV_R2_std": 0.1441921906774783
+        },
+        "RandomForest": {
+          "MAE": 1.921590820168716,
+          "RMSE": 2.434260453033386,
+          "R2": 0.4194326581962631,
+          "MAPE_pct": 1.6475555574995793,
+          "CV_R2_mean": 0.3073467983253379,
+          "CV_R2_std": 0.14103692485550912
+        },
+        "GradientBoosting": {
+          "MAE": 1.9214730183470299,
+          "RMSE": 2.4335061470664447,
+          "R2": 0.41979240405621276,
+          "MAPE_pct": 1.6476144526197039,
+          "CV_R2_mean": 0.29702274296980213,
+          "CV_R2_std": 0.14799019106797837
+        }
+      },
+      "features": [
+        "ambient_temp_c",
+        "ambient_pressure_mbar",
+        "ambient_humidity_pct",
+        "boiler_load_pct",
+        "steam_flow_kg_h",
+        "flue_gas_temp_c",
+        "excess_air_pct",
+        "feedwater_temp_c",
+        "blowdown_rate_pct",
+        "hour",
+        "day_of_week",
+        "month",
+        "is_daytime",
+        "sin_hour",
+        "cos_hour",
+        "sin_month",
+        "cos_month"
+      ]
+    }
+  },
+  "real_derived": {
+    "efficiency": {
+      "best": "LinearRegression",
+      "metrics": {
+        "LinearRegression": {
+          "MAE": 0.0026149956319851154,
+          "RMSE": 0.003107642582918173,
+          "R2": 0.9999980687780733,
+          "MAPE_pct": 0.0033938206435313112,
+          "CV_R2_mean": 0.9999980464947196,
+          "CV_R2_std": 5.694758218075965e-08
+        },
+        "Ridge": {
+          "MAE": 0.002642298400134314,
+          "RMSE": 0.0031392873499116124,
+          "R2": 0.9999980292470012,
+          "MAPE_pct": 0.003429202601571221,
+          "CV_R2_mean": 0.999998010008286,
+          "CV_R2_std": 5.410235347496875e-08
+        },
+        "RandomForest": {
+          "MAE": 0.03567843361647103,
+          "RMSE": 0.049475803431188146,
+          "R2": 0.9995104965389431,
+          "MAPE_pct": 0.0463456180869795,
+          "CV_R2_mean": 0.9994788870982239,
+          "CV_R2_std": 4.573755806690083e-05
+        },
+        "GradientBoosting": {
+          "MAE": 0.030498847718406878,
+          "RMSE": 0.03937287496210199,
+          "R2": 0.9996899981316164,
+          "MAPE_pct": 0.039564708008423745,
+          "CV_R2_mean": 0.9996495519210342,
+          "CV_R2_std": 2.3599211810095893e-05
+        }
+      },
+      "features": [
+        "ambient_temp_c",
+        "ambient_pressure_mbar",
+        "ambient_humidity_pct",
+        "flue_gas_temp_c",
+        "feedwater_temp_c",
+        "boiler_load_pct",
+        "steam_flow_kg_h",
+        "hour",
+        "day_of_week",
+        "month",
+        "is_daytime",
+        "sin_hour",
+        "cos_hour",
+        "sin_month",
+        "cos_month"
+      ]
+    },
+    "gas": {
+      "best": "LinearRegression",
+      "metrics": {
+        "LinearRegression": {
+          "MAE": 0.0,
+          "RMSE": 0.0,
+          "R2": 1.0,
+          "MAPE_pct": 0.0,
+          "CV_R2_mean": 1.0,
+          "CV_R2_std": 0.0
+        },
+        "Ridge": {
+          "MAE": 0.0,
+          "RMSE": 0.0,
+          "R2": 1.0,
+          "MAPE_pct": 0.0,
+          "CV_R2_mean": 1.0,
+          "CV_R2_std": 0.0
+        },
+        "RandomForest": {
+          "MAE": 0.0,
+          "RMSE": 0.0,
+          "R2": 1.0,
+          "MAPE_pct": 0.0,
+          "CV_R2_mean": 1.0,
+          "CV_R2_std": 0.0
+        },
+        "GradientBoosting": {
+          "MAE": 0.0,
+          "RMSE": 0.0,
+          "R2": 1.0,
+          "MAPE_pct": 0.0,
+          "CV_R2_mean": 1.0,
+          "CV_R2_std": 0.0
+        }
+      },
+      "features": [
+        "ambient_temp_c",
+        "ambient_pressure_mbar",
+        "ambient_humidity_pct",
+        "flue_gas_temp_c",
+        "feedwater_temp_c",
+        "boiler_load_pct",
+        "steam_flow_kg_h",
+        "hour",
+        "day_of_week",
+        "month",
+        "is_daytime",
+        "sin_hour",
+        "cos_hour",
+        "sin_month",
+        "cos_month"
+      ]
+    }
+  }
+}
